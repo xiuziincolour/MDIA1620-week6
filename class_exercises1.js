@@ -12,15 +12,34 @@ if they are over 70, then ALSO warn them about their "life"
 */
 
 //determine a proper parameter variable name
-function CheckDrinkingAge(paramVariable){
+function CheckDrinkingAge(age){
 
-  console.log("Write your code here!");
+   /* planning and design */
+   // The function will accept the person's age as an argument.
+   // The question should be "If you wnat to enter the bar, I need to know how old you are." and check their age.
+   //if they are under 19, show "You should leave."
+   //if they are between 19 to 50, then "Drink away."
+   //if they are over 50, then "It's not healthy."
+   //if they are over 70, then "Dringking cause death."
+
+  if (age<=19) {
+  console.log("You should leave.");
+  }
+  else if (age > 19 && age <= 50) {
+    console.log("Drink away.")
+  }
+  else if (age > 50 && age <= 70){
+      console.log("It's not healthy.")
+  }
+  else if (age > 70){
+      console.log("Drinking cause death.")
+  }
 }
 
-//determine a proper question to ask and the proper variable name for user input
-readline.question('the question ', _variableName => {
+//ask the question
+readline.question('If you wnat to enter the bar, I need to know how old you are. ', age => {
 
-  //call your function here
+  CheckDrinkingAge(number(age));
   
   readline.close();
 });
